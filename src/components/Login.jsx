@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import {useNavigate} from "react-router-dom";
+import trx from "../assets/tron-trx-icon.svg"
 
 
  function Login(){ 
    const navigate = useNavigate();
+   //hooks:components:functions
     useEffect(()=>{
         const button = document.getElementById("button");
         if(button){
@@ -14,28 +16,28 @@ import {useNavigate} from "react-router-dom";
             button.removeEventListener("click", handleClick);
         })
     })
-
+    //autenticacion:DOM:id:register:user:password:/Home
     const handleClick = ()=>{
          const username = document.getElementById("email").value;
          const password = document.getElementById("password").value;
 
          if(username && password){
             console.log("inicio exitoso!");
-            navigate("/home.jsx")
+            //:/Home
+            navigate("/Home")
          }else{
             console.log("username", username)
             console.log("password", password)
            
          }
     }
-
     return(
-        <section id="app" onSubmit={handleClick} className='bg-gray-50 dark:bg-gray-900 w-96 h-full'>
+        <section id="app" onSubmit={handleClick} className='bg-gray-500 dark:bg-white w-full h-full'>
            <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
-              <a href='$' className='flex  items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white'>
-                    <img className='w-8 h-8 mr-2' src='https://cdn.icon-icons.com/icons2/1487/PNG/512/8369-bitcoin_102502.png' alt='logotipo'>
+              <a href='$' className='flex  items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-dark'>
+                    <img className='w-8 h-8 mr-1' src={trx} alt='logotipo'>
                       </img>
-                         CriptoMania
+                         TRON
                 </a>
    <div className='w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700'>
         <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
@@ -45,17 +47,17 @@ import {useNavigate} from "react-router-dom";
           <form  className='space-y-6 md:space-y-7 action:$ flex flex-col'>
              <div>
                  <label for="email" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'> Your email </label>
-                 <input for="email"  type="email" name='email' id='email'   className='bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder="email' required="">
+                 <input for="email"  type="email" placeholder="email" name='email' id='email'   className='bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder="email' required="">
                  </input>
              </div>
              <div>
-                <label for="password" className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'> Your password </label>               
-                <input for="email" name='password' id='password' className='bg-gray-50 border   border-gray-300  text-gray-900 rounded-lg focus:ring-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500  dark:focus:border-blue-500 placeholder="password"' required="">
+                <label for="password"  className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'> Your password </label>               
+                <input for="email" name='password' id='password' alt="password" type="password" placeholder="password" className='bg-gray-50 border   border-gray-300  text-gray-900 rounded-lg focus:ring-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500  dark:focus:border-blue-500 placeholder="password"' required="">
                 </input>      
              </div>
 
              <div>
-               <button type="button" id="button"   aria-placeholder="iniciar sesion" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 dark:bg-black dark:text-white">iniciar sesion</button>
+               <button type="button" id="button"   aria-placeholder="iniciar sesion" className="bg-gray-50 border border-gray-300 hover:bg-red  text-gray-900 rounded-lg focus:ring-primary-600 dark:bg-black dark:text-white">iniciar sesion</button>
              </div>
           </form>
         </div>
