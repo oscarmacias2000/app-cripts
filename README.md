@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite(simple page about the tronxcoin world and more coins)
 ![image](https://watcher.guru/news/wp-content/uploads/2024/10/Tron-1.jpg)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
